@@ -37,18 +37,8 @@ export default function WhatIsMatcha() {
           </ul>
 
           <div className="relative w-full min-h-[320px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5">
-            <img
-              src="/matcha.png"
-              alt="Matcha"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col space-y-8">
-          <div className="relative w-full aspect-video min-h-[280px] rounded-3xl overflow-hidden bg-[#0E7D23]/5 border border-[#0E7D23]/20">
             <video
-              className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+              className="w-full h-full object-cover"
               autoPlay
               muted
               loop
@@ -64,6 +54,16 @@ export default function WhatIsMatcha() {
               <source src="/whisking.MOV" type="video/quicktime" />
               Váš prohlížeč nepodporuje přehrávání videa.
             </video>
+          </div>
+        </div>
+
+        <div className="flex flex-col space-y-8">
+          <div className="relative w-full aspect-video min-h-[280px] rounded-3xl overflow-hidden bg-[#0E7D23]/5 border border-[#0E7D23]/20">
+            <img
+              src="/matcha.png"
+              alt="Matcha"
+              className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+            />
           </div>
 
           <div className="mt-12 text-left">

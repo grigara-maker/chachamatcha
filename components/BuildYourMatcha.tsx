@@ -57,32 +57,32 @@ const BuildYourMatcha = () => {
       </div>
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Column: The ORGANIC Cup (Scaled Down) */}
-        <div className="flex justify-center items-center">
-          <div className="relative perspective-[1000px]">
+        {/* Left Column: pohár – omezený rozsah, bez přetékání */}
+        <div className="flex justify-center items-center min-w-0 overflow-hidden">
+          <div className="relative perspective-[1000px] shrink-0">
             <div className="relative w-[200px] h-[300px] border-4 border-[#0E7D23] rounded-[12px_12px_78px_78px] overflow-hidden flex flex-col-reverse bg-transparent z-10">
-              {/* FLAVOR LAYER */}
+              {/* FLAVOR LAYER – zaoblený spodní okraj pohárku */}
               <motion.div
                 initial={{ height: '0%' }}
                 animate={{ height: flavor ? '20%' : '0%', backgroundColor: flavor ? flavors.find(f => f.id === flavor)?.color : 'transparent' }}
                 transition={{ type: 'spring', stiffness: 50, damping: 12 }}
-                className="w-full"
+                className="w-full rounded-b-[74px] min-h-0"
               />
 
-              {/* MILK LAYER */}
+              {/* MILK LAYER – zaoblení shora i zdola, aby kopírovalo tvar pohárku */}
               <motion.div
                 initial={{ height: '0%' }}
                 animate={{ height: milk ? '50%' : '0%', backgroundColor: milk ? milks.find(m => m.id === milk)?.color : 'transparent' }}
                 transition={{ type: 'spring', stiffness: 50, damping: 12, delay: 0.1 }}
-                className="w-full border-b border-black/5"
+                className="w-full border-b border-black/5 rounded-t-[74px] rounded-b-[8px] min-h-0 shrink-0"
               />
 
-              {/* MATCHA LAYER */}
+              {/* MATCHA LAYER – zaoblený horní okraj pohárku */}
               <motion.div
                 initial={{ height: '0%' }}
                 animate={{ height: matcha ? '30%' : '0%', backgroundColor: matcha ? matchas.find(m => m.id === matcha)?.color : 'transparent' }}
                 transition={{ type: 'spring', stiffness: 50, damping: 12, delay: 0.2 }}
-                className="w-full border-b border-black/10"
+                className="w-full border-b border-black/10 rounded-t-[8px] min-h-0"
               />
             </div>
           </div>

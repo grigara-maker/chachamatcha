@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 import { motion } from 'framer-motion'
 
 interface SplashScreenProps {
@@ -157,22 +157,25 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
             animate="visible"
           >
             {characters.map((char, index) => (
-              <motion.span
-                key={index}
-                variants={letterVariants}
-                className="inline-block cursor-pointer"
-                style={{ marginRight: char === ' ' ? '0.4em' : '0.02em' }}
-                whileHover={{
-                  scaleX: [1, 1.2, 0.85, 1.05, 1],
-                  scaleY: [1, 0.8, 1.15, 0.95, 1],
-                }}
-                transition={{
-                  duration: 0.35,
-                  ease: "easeInOut",
-                }}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </motion.span>
+              <Fragment key={index}>
+                <motion.span
+                  variants={letterVariants}
+                  className="inline-block cursor-pointer"
+                  style={{ marginRight: char === ' ' ? '0.4em' : '0.02em' }}
+                  whileHover={{
+                    scaleX: [1, 1.2, 0.85, 1.05, 1],
+                    scaleY: [1, 0.8, 1.15, 0.95, 1],
+                  }}
+                  transition={{
+                    duration: 0.35,
+                    ease: "easeInOut",
+                  }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+                {/* Na mobilu zlom po "Cha Cha " na druhý řádek "Matcha" */}
+                {index === 7 && <br className="sm:hidden" />}
+              </Fragment>
             ))}
           </motion.h1>
         </div>
