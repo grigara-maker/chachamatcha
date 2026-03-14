@@ -37,23 +37,11 @@ export default function WhatIsMatcha() {
           </ul>
 
           <div className="relative w-full min-h-[320px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5">
-            <video
+            <img
+              src="/matcha.png"
+              alt="Matcha"
               className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/matcha.png?v=2"
-              controlsList="nodownload nofullscreen noremoteplayback"
-              disablePictureInPicture
-              onPause={(e) => {
-                void e.currentTarget.play()
-              }}
-            >
-              <source src="/whisking.MOV" type="video/quicktime" />
-              Váš prohlížeč nepodporuje přehrávání videa.
-            </video>
+            />
           </div>
         </div>
 
