@@ -60,6 +60,7 @@ const BuildYourMatcha = () => {
         {/* Left Column: The ORGANIC Cup (Scaled Down) */}
         <div className="flex justify-center items-center">
           <div className="relative perspective-[1000px]">
+            {/* overflow-hidden clips liquid layers to cup rounded bottom */}
             <div className="relative w-[200px] h-[300px] border-4 border-[#0E7D23] rounded-[12px_12px_78px_78px] overflow-hidden flex flex-col-reverse bg-transparent z-10">
               {/* FLAVOR LAYER – vpředu */}
               <motion.div
