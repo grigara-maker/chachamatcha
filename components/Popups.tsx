@@ -49,9 +49,9 @@ export default function Popups() {
   const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + events.length) % events.length);
 
   return (
-    <section id="popups" className="scroll-mt-32 relative w-full min-h-[80vh] bg-[#FFFEDF] pt-32 pb-24 overflow-hidden flex flex-col items-center">
-      <h2 id="popups-heading" className={`${schoolbell.className} text-6xl md:text-7xl text-[#0E7D23] mb-16 text-center`}>
-        Minulé akce
+    <section id="popups" className="scroll-mt-28 sm:scroll-mt-32 relative w-full min-h-[80vh] bg-[#FFFEDF] pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 overflow-hidden flex flex-col items-center safe-inset-x">
+      <h2 id="popups-heading" className={`${schoolbell.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#0E7D23] mb-10 sm:mb-14 md:mb-16 text-center px-4`}>
+        POP-UPs
       </h2>
 
       <div className="w-full max-w-6xl px-4">
@@ -79,7 +79,7 @@ export default function Popups() {
                     }}
                     exit={{ opacity: 0, y: -40, scale: 0.9 }}
                     transition={{ type: 'spring', stiffness: 280, damping: 28 }}
-                    className={`absolute left-0 right-0 top-0 mx-auto flex min-h-[380px] w-full flex-col rounded-3xl border bg-[#FFFEDF] p-8 ${
+                    className={`absolute left-0 right-0 top-0 mx-auto flex min-h-[340px] sm:min-h-[380px] w-full flex-col rounded-2xl sm:rounded-3xl border bg-[#FFFEDF] p-5 sm:p-6 md:p-8 ${
                       isFront ? 'pointer-events-auto' : 'pointer-events-none'
                     } ${
                       isUpcoming && isFront
@@ -98,16 +98,16 @@ export default function Popups() {
                       </div>
                     ) : null}
 
-                    <div className="mb-6">
-                      <span className={`mb-4 inline-block rounded-full px-4 py-1.5 text-xs font-bold ${event.badgeColor}`}>
+                    <div className="mb-4 sm:mb-6">
+                      <span className={`mb-3 sm:mb-4 inline-block rounded-full px-3 sm:px-4 py-1 sm:py-1.5 text-xs font-bold ${event.badgeColor}`}>
                         {event.badge}
                       </span>
-                      <h3 className="text-2xl font-bold leading-tight text-[#0E7D23]">
+                      <h3 className="text-xl sm:text-2xl font-bold leading-tight text-[#0E7D23]">
                         {event.title}
                       </h3>
                     </div>
 
-                    <div className="mb-8 flex-grow space-y-4 text-sm text-[#0E7D23]/80">
+                    <div className="mb-6 sm:mb-8 flex-grow space-y-3 sm:space-y-4 text-sm text-[#0E7D23]/80">
                       <p className="flex items-center gap-3">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         {event.location}
@@ -127,7 +127,7 @@ export default function Popups() {
                         href={event.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex w-full items-center justify-center gap-2 rounded-full py-3 font-bold transition-colors ${
+                        className={`flex w-full items-center justify-center gap-2 rounded-full py-3 min-h-[44px] font-bold transition-colors touch-manipulation ${
                           isUpcoming && isFront
                             ? 'bg-[#FFD700] text-[#0E7D23] hover:bg-[#FFD700]/90'
                             : 'bg-[#0E7D23] text-[#FFFEDF] hover:bg-[#0E7D23]/90'
@@ -213,7 +213,7 @@ export default function Popups() {
                     }}
                     exit={{ opacity: 0, y: -40, scale: 0.9 }}
                     transition={{ type: 'spring', stiffness: 280, damping: 28 }}
-                    className={`absolute left-0 right-0 top-0 mx-auto flex min-h-[380px] w-full flex-col rounded-3xl border bg-[#FFFEDF] p-8 ${
+                    className={`absolute left-0 right-0 top-0 mx-auto flex min-h-[340px] sm:min-h-[380px] w-full flex-col rounded-2xl sm:rounded-3xl border bg-[#FFFEDF] p-5 sm:p-6 md:p-8 ${
                       isFront ? 'pointer-events-auto' : 'pointer-events-none'
                     } ${
                       isUpcoming && isFront
@@ -232,16 +232,16 @@ export default function Popups() {
                       </div>
                     ) : null}
 
-                    <div className="mb-6">
-                      <span className={`mb-4 inline-block rounded-full px-4 py-1.5 text-xs font-bold ${event.badgeColor}`}>
+                    <div className="mb-4 sm:mb-6">
+                      <span className={`mb-3 sm:mb-4 inline-block rounded-full px-3 sm:px-4 py-1 sm:py-1.5 text-xs font-bold ${event.badgeColor}`}>
                         {event.badge}
                       </span>
-                      <h3 className="text-2xl font-bold leading-tight text-[#0E7D23]">
+                      <h3 className="text-xl sm:text-2xl font-bold leading-tight text-[#0E7D23]">
                         {event.title}
                       </h3>
                     </div>
 
-                    <div className="mb-8 flex-grow space-y-4 text-sm text-[#0E7D23]/80">
+                    <div className="mb-6 sm:mb-8 flex-grow space-y-3 sm:space-y-4 text-sm text-[#0E7D23]/80">
                       <p className="flex items-center gap-3">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         {event.location}
@@ -261,7 +261,7 @@ export default function Popups() {
                         href={event.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex w-full items-center justify-center gap-2 rounded-full py-3 font-bold transition-colors ${
+                        className={`flex w-full items-center justify-center gap-2 rounded-full py-3 min-h-[44px] font-bold transition-colors touch-manipulation ${
                           isUpcoming && isFront
                             ? 'bg-[#FFD700] text-[#0E7D23] hover:bg-[#FFD700]/90'
                             : 'bg-[#0E7D23] text-[#FFFEDF] hover:bg-[#0E7D23]/90'

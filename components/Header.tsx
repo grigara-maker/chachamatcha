@@ -54,7 +54,7 @@ export default function Header() {
           isScrolled ? 'bg-[#FFFEDF]/80 backdrop-blur-xl shadow-lg' : 'bg-transparent'
         }`}
       >
-        <nav className="w-full px-6 sm:px-10 py-4">
+        <nav className="w-full px-4 sm:px-6 md:px-10 py-3 sm:py-4 safe-inset-x">
           <div className="hidden md:grid grid-cols-3 items-center h-20 sm:h-24 w-full">
             <div />
 
@@ -96,11 +96,11 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="md:hidden flex items-center justify-between h-20">
-            <a href="#" className="text-3xl font-bold text-[#0E7D23] leading-none tracking-tight" style={{ fontFamily: "'Gloria Hallelujah', cursive" }}>
+          <div className="md:hidden flex items-center justify-between h-16 sm:h-20">
+            <a href="#" className="text-2xl sm:text-3xl font-bold text-[#0E7D23] leading-none tracking-tight" style={{ fontFamily: "'Gloria Hallelujah', cursive" }}>
               CHA CHA
             </a>
-            <motion.button className="p-2 text-[#0E7D23]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} whileTap={{ scale: 0.9 }}>
+            <motion.button className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#0E7D23] touch-manipulation" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} whileTap={{ scale: 0.9 }} aria-label={isMobileMenuOpen ? 'Zavřít menu' : 'Otevřít menu'}>
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </motion.button>
           </div>
@@ -113,14 +113,14 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-[#FFFEDF] pt-28 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-[#FFFEDF] pt-24 sm:pt-28 px-4 sm:px-6 pb-8 safe-top safe-inset-x safe-bottom md:hidden"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link, index) => (
                 <motion.button
                   type="button"
                   key={link.label}
-                  className="text-2xl font-semibold text-[#0E7D23] hover:text-[#064E14]"
+                  className="text-xl sm:text-2xl font-semibold text-[#0E7D23] hover:text-[#064E14] py-4 min-h-[48px] text-left touch-manipulation"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}

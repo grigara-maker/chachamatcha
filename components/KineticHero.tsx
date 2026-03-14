@@ -13,10 +13,10 @@ export default function KineticHero() {
   return (
     <motion.section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#FFFEDF]"
+      className="relative min-h-screen min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-[#FFFEDF] safe-top safe-inset-x"
       style={{ opacity: parallaxOpacity }}
     >
-      <div className="relative z-10 w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px]">
+      <div className="relative z-10 w-[280px] h-[280px] min-[400px]:w-[320px] min-[400px]:h-[320px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] max-w-[90vw] max-h-[55vh]">
         <Image
           src="/drawing.png?v=3"
           alt="Matcha Vary whisk drawing"
@@ -28,7 +28,8 @@ export default function KineticHero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 safe-bottom"
+        style={{ paddingBottom: 'max(2rem, env(safe-area-inset-bottom))' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ 

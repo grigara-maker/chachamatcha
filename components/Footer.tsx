@@ -5,25 +5,25 @@ import { Instagram, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer id="kontakt" className="scroll-mt-32 bg-[#FFFEDF] text-[#0E7D23] py-16">
+    <footer id="kontakt" className="scroll-mt-28 sm:scroll-mt-32 bg-[#FFFEDF] text-[#0E7D23] py-12 sm:py-14 md:py-16 safe-inset-x safe-bottom">
       <div className="container-wide section-padding">
-        <div className="grid gap-12 mb-12 md:grid-cols-[minmax(0,1fr)_320px] md:items-start">
+        <div className="grid gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:grid-cols-[minmax(0,1fr)_320px] md:items-start">
           <div>
             <img 
               src="/Logo.png" 
               alt="Cha Cha Matcha" 
-              className="w-48 sm:w-56 md:w-64 h-auto object-contain -mt-4 mb-6"
+              className="w-40 sm:w-48 md:w-56 lg:w-64 h-auto object-contain -mt-2 sm:-mt-4 mb-4 sm:mb-6"
             />
           </div>
 
           <div>
-            <h4 id="kontakt-heading" className="text-lg font-bold mb-6 text-[#0E7D23]">Kontakt</h4>
+            <h4 id="kontakt-heading" className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-[#0E7D23]">Kontakt</h4>
             <a 
               href="mailto:info@chachamatcha.cz" 
-              className="flex items-center gap-2 text-[#0E7D23] hover:text-[#0E7D23]/70 transition-colors duration-300 mb-4"
+              className="flex items-center gap-2 text-[#0E7D23] hover:text-[#0E7D23]/70 transition-colors duration-300 mb-4 min-h-[44px] touch-manipulation"
             >
               <Mail size={18} />
-              info@chachamatcha.cz
+              <span className="break-all">info@chachamatcha.cz</span>
             </a>
             <p className="text-[#0E7D23] mb-3">Sledujte nás na sociálních sítích</p>
             <div className="flex gap-4">
@@ -31,7 +31,7 @@ export default function Footer() {
                 href="https://www.instagram.com/matchavary/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-[#0E7D23] text-[#FFFEDF] rounded-full flex items-center justify-center hover:bg-[#0E7D23]/80 transition-colors duration-300"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] bg-[#0E7D23] text-[#FFFEDF] rounded-full flex items-center justify-center hover:bg-[#0E7D23]/80 active:scale-95 transition-colors duration-300 touch-manipulation"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -41,7 +41,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@matchavary"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-[#0E7D23] text-[#FFFEDF] rounded-full flex items-center justify-center hover:bg-[#0E7D23]/80 transition-colors duration-300"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] bg-[#0E7D23] text-[#FFFEDF] rounded-full flex items-center justify-center hover:bg-[#0E7D23]/80 active:scale-95 transition-colors duration-300 touch-manipulation"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >

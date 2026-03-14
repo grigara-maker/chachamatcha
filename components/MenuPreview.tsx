@@ -104,17 +104,17 @@ export default function MenuPreview() {
   }
 
   return (
-    <section id="menu" className="scroll-mt-32 w-full bg-[#FFFEDF] py-12 px-6">
-      <div className="max-w-6xl mx-auto text-center mb-10">
-        <h2 id="menu-heading" className={`${schoolbell.className} text-5xl md:text-6xl text-[#0E7D23] mb-3`}>
+    <section id="menu" className="scroll-mt-28 sm:scroll-mt-32 w-full bg-[#FFFEDF] py-10 sm:py-12 px-4 sm:px-6 safe-inset-x">
+      <div className="max-w-6xl mx-auto text-center mb-8 sm:mb-10">
+        <h2 id="menu-heading" className={`${schoolbell.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E7D23] mb-2 sm:mb-3 leading-tight px-2`}>
           A jakou matchu připravujeme my?
         </h2>
-        <p className="mx-auto max-w-2xl text-[#0E7D23]/80 text-base md:text-lg">
+        <p className="mx-auto max-w-2xl text-[#0E7D23]/80 text-sm sm:text-base md:text-lg px-2">
           Proklikni si naše signature drinky!
         </p>
       </div>
 
-      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-6 lg:grid-cols-[minmax(0,480px)_minmax(280px,360px)] lg:justify-center">
+      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-[minmax(0,480px)_minmax(280px,360px)] lg:justify-center">
         <div className="relative overflow-hidden rounded-[2rem] border border-[#0E7D23]/10 bg-[#0E7D23] shadow-[0_24px_60px_-20px_rgba(14,125,35,0.28)]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -125,10 +125,10 @@ export default function MenuPreview() {
               transition={{ duration: 0.28, ease: 'easeOut' }}
               className="relative flex flex-col"
             >
-              <div className="flex items-center justify-center bg-[#0E7D23] px-4 pb-2 pt-4 md:px-5 md:pb-1 md:pt-5">
+              <div className="flex items-center justify-center bg-[#0E7D23] px-3 pb-2 pt-3 sm:px-4 sm:pt-4 md:px-5 md:pb-1 md:pt-5">
                 <video
                   key={activeItem.video}
-                  className="block h-auto max-h-[240px] w-auto max-w-full rounded-[1.5rem] object-contain md:max-h-[320px]"
+                  className="block h-auto max-h-[200px] sm:max-h-[240px] w-auto max-w-full rounded-[1.25rem] sm:rounded-[1.5rem] object-contain md:max-h-[320px]"
                   autoPlay
                   muted
                   loop
@@ -143,7 +143,7 @@ export default function MenuPreview() {
                 </video>
               </div>
 
-              <div className="bg-[#0E7D23] px-5 pb-5 pt-7 text-[#FFFEDF] md:px-6 md:pb-6 md:pt-8">
+              <div className="bg-[#0E7D23] px-4 pb-4 pt-5 sm:px-5 sm:pb-5 sm:pt-6 md:px-6 md:pb-6 md:pt-8 text-[#FFFEDF]">
                 {activeItem.badge ? (
                   <div className="mb-2 flex flex-wrap items-center gap-3">
                     <span className="rounded-full bg-[#FFD700] px-3 py-1 text-xs font-bold text-[#0E7D23]">
@@ -151,8 +151,8 @@ export default function MenuPreview() {
                     </span>
                   </div>
                 ) : null}
-                <h3 className={`${schoolbell.className} text-3xl leading-tight md:text-4xl`}>{activeItem.title}</h3>
-                <p className="mt-1.5 max-w-xl text-sm text-[#FFFEDF]/85 md:text-base">{activeItem.desc}</p>
+                <h3 className={`${schoolbell.className} text-2xl sm:text-3xl leading-tight md:text-4xl`}>{activeItem.title}</h3>
+                <p className="mt-1.5 max-w-xl text-xs sm:text-sm text-[#FFFEDF]/85 md:text-base leading-snug">{activeItem.desc}</p>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -168,13 +168,13 @@ export default function MenuPreview() {
                 type="button"
                 onClick={() => setActiveItemId(item.id)}
                 aria-pressed={isActive}
-                className={`rounded-[1.75rem] border p-5 text-left transition-all duration-300 ${
+                className={`rounded-[1.5rem] sm:rounded-[1.75rem] border p-4 sm:p-5 text-left transition-all duration-300 min-h-[56px] flex items-center touch-manipulation ${
                   isActive
                     ? 'border-[#0E7D23] bg-[#0E7D23] text-[#FFFEDF] shadow-[0_18px_40px_-20px_rgba(14,125,35,0.45)]'
-                    : 'border-[#0E7D23]/10 bg-white/40 text-[#0E7D23] hover:-translate-y-0.5 hover:border-[#0E7D23]/25 hover:shadow-[0_16px_30px_-24px_rgba(14,125,35,0.45)]'
+                    : 'border-[#0E7D23]/10 bg-white/40 text-[#0E7D23] hover:-translate-y-0.5 hover:border-[#0E7D23]/25 hover:shadow-[0_16px_30px_-24px_rgba(14,125,35,0.45)] active:bg-[#0E7D23]/5'
                 }`}
               >
-                <h3 className={`${schoolbell.className} text-3xl leading-tight md:text-[2.1rem]`}>
+                <h3 className={`${schoolbell.className} text-xl sm:text-2xl md:text-[2.1rem] leading-tight`}>
                   {item.title}
                 </h3>
               </button>
@@ -183,10 +183,10 @@ export default function MenuPreview() {
         </div>
       </div>
 
-      <div className="text-center mt-10">
+      <div className="text-center mt-8 sm:mt-10">
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="px-6 py-2 rounded-full border-2 border-[#0E7D23] text-[#0E7D23] font-bold hover:bg-[#0E7D23] hover:text-[#FFFEDF] transition-colors"
+          className="min-h-[44px] px-6 py-2.5 rounded-full border-2 border-[#0E7D23] text-[#0E7D23] font-bold hover:bg-[#0E7D23] hover:text-[#FFFEDF] active:scale-[0.98] transition-colors touch-manipulation"
         >
           Celé menu
         </button>
@@ -202,7 +202,7 @@ export default function MenuPreview() {
             onClick={() => setIsMenuOpen(false)}
           >
             <motion.div
-              className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#FFFEDF] text-[#0E7D23] rounded-3xl p-8 md:p-12 relative shadow-2xl"
+              className="w-full max-w-4xl max-h-[85dvh] sm:max-h-[90vh] overflow-y-auto overflow-x-hidden bg-[#FFFEDF] text-[#0E7D23] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-12 relative shadow-2xl safe-inset-x"
               initial={{ opacity: 0, y: 20, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.98 }}
@@ -211,16 +211,16 @@ export default function MenuPreview() {
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-[#0E7D23] text-[#FFFEDF] font-bold"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-[#0E7D23] text-[#FFFEDF] font-bold text-xl touch-manipulation"
                 aria-label="Zavřít menu"
               >
                 ×
               </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                 <div>
-                  <h3 className={`${schoolbell.className} text-5xl mb-4`}>MATCHA</h3>
-                  <h4 className={`${schoolbell.className} text-3xl mb-2`}>CLASSICS</h4>
+                  <h3 className={`${schoolbell.className} text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4`}>MATCHA</h3>
+                  <h4 className={`${schoolbell.className} text-xl sm:text-2xl md:text-3xl mb-2`}>CLASSICS</h4>
                   {menuData.classics.map((item) => (
                     <div key={item.name} className="flex justify-between items-center border-b border-[#0E7D23]/20 py-2">
                       <span>{item.name}</span>
@@ -228,7 +228,7 @@ export default function MenuPreview() {
                     </div>
                   ))}
 
-                  <h4 className={`${schoolbell.className} text-3xl mt-8 mb-2`}>SPECIALS</h4>
+                  <h4 className={`${schoolbell.className} text-xl sm:text-2xl md:text-3xl mt-6 sm:mt-8 mb-2`}>SPECIALS</h4>
                   {menuData.specials.map((item) => (
                     <div key={item.name} className="flex justify-between items-center border-b border-[#0E7D23]/20 py-2">
                       <span>{item.name}</span>
@@ -236,15 +236,15 @@ export default function MenuPreview() {
                     </div>
                   ))}
 
-                  <h4 className={`${schoolbell.className} text-3xl mt-8 mb-2`}>DRUHY MLÉKA</h4>
+                  <h4 className={`${schoolbell.className} text-xl sm:text-2xl md:text-3xl mt-6 sm:mt-8 mb-2`}>DRUHY MLÉKA</h4>
                   <div className="border-b border-[#0E7D23]/20 py-2">
                     {menuData.milks.join(' • ')}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className={`${schoolbell.className} text-5xl mb-4`}>NON-MATCHA</h3>
-                  <h4 className={`${schoolbell.className} text-3xl mb-2`}>NÁPOJE</h4>
+                  <h3 className={`${schoolbell.className} text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4`}>NON-MATCHA</h3>
+                  <h4 className={`${schoolbell.className} text-xl sm:text-2xl md:text-3xl mb-2`}>NÁPOJE</h4>
                   {menuData.napoje.map((item) => (
                     <div key={item.name} className="flex justify-between items-center border-b border-[#0E7D23]/20 py-2">
                       <span>{item.name}</span>
@@ -252,7 +252,7 @@ export default function MenuPreview() {
                     </div>
                   ))}
 
-                  <h4 className={`${schoolbell.className} text-3xl mt-8 mb-2`}>ZÁKUSKY</h4>
+                  <h4 className={`${schoolbell.className} text-xl sm:text-2xl md:text-3xl mt-6 sm:mt-8 mb-2`}>ZÁKUSKY</h4>
                   {menuData.zakusky.map((item) => (
                     <div key={item.name} className="flex justify-between items-center border-b border-[#0E7D23]/20 py-2">
                       <span>{item.name}</span>
