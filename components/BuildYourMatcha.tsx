@@ -60,31 +60,41 @@ const BuildYourMatcha = () => {
         {/* Left Column: The ORGANIC Cup (Scaled Down) */}
         <div className="flex justify-center items-center">
           <div className="relative perspective-[1000px]">
-            {/* overflow-hidden clips liquid layers to cup rounded bottom */}
-            <div className="relative w-[200px] h-[300px] border-4 border-[#0E7D23] rounded-[12px_12px_78px_78px] overflow-hidden flex flex-col-reverse bg-transparent z-10">
-              {/* FLAVOR LAYER – vpředu */}
-              <motion.div
-                initial={{ height: '0%' }}
-                animate={{ height: flavor ? '20%' : '0%', backgroundColor: flavor ? flavors.find(f => f.id === flavor)?.color : 'transparent' }}
-                transition={{ type: 'spring', stiffness: 50, damping: 12 }}
-                className="relative z-20 w-full"
-              />
-
-              {/* MILK LAYER – na pozadí, ale stále uprostřed drinku */}
-              <motion.div
-                initial={{ height: '0%' }}
-                animate={{ height: milk ? '50%' : '0%', backgroundColor: milk ? milks.find(m => m.id === milk)?.color : 'transparent' }}
-                transition={{ type: 'spring', stiffness: 50, damping: 12, delay: 0.1 }}
-                className="relative z-0 w-full border-b border-black/5"
-              />
-
-              {/* MATCHA LAYER – vpředu */}
-              <motion.div
-                initial={{ height: '0%' }}
-                animate={{ height: matcha ? '30%' : '0%', backgroundColor: matcha ? matchas.find(m => m.id === matcha)?.color : 'transparent' }}
-                transition={{ type: 'spring', stiffness: 50, damping: 12, delay: 0.2 }}
-                className="relative z-20 w-full border-b border-black/10"
-              />
+            {/* overflow-hidden clips liquid layers to cup rounded bottom; fixed DOM order = fixed visual slots */}
+            <div className="relative w-[200px] h-[300px] border-4 border-[#0E7D23] rounded-[12px_12px_78px_78px] overflow-hidden flex flex-col justify-end bg-transparent z-10">
+              {/* Top: matcha layer (fixed slot) */}
+              {matcha && (
+                <motion.div
+                  key="matcha"
+                  initial={{ height: 0 }}
+                  animate={{ height: '30%' }}
+                  transition={{ type: 'spring', stiffness: 50, damping: 12 }}
+                  className="matcha-layer w-full flex-shrink-0 border-b border-black/10"
+                  style={{ backgroundColor: matchas.find(m => m.id === matcha)?.color }}
+                />
+              )}
+              {/* Middle: milk layer (fixed slot) */}
+              {milk && (
+                <motion.div
+                  key="milk"
+                  initial={{ height: 0 }}
+                  animate={{ height: '50%' }}
+                  transition={{ type: 'spring', stiffness: 50, damping: 12 }}
+                  className="milk-layer w-full flex-shrink-0 border-b border-black/5"
+                  style={{ backgroundColor: milks.find(m => m.id === milk)?.color }}
+                />
+              )}
+              {/* Bottom: base/flavor layer (fixed slot) */}
+              {flavor && (
+                <motion.div
+                  key="base"
+                  initial={{ height: 0 }}
+                  animate={{ height: '20%' }}
+                  transition={{ type: 'spring', stiffness: 50, damping: 12 }}
+                  className="base-layer w-full flex-shrink-0"
+                  style={{ backgroundColor: flavors.find(f => f.id === flavor)?.color }}
+                />
+              )}
             </div>
           </div>
         </div>
