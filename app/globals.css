@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-family: 'American Uncial';
+  src: url('/fonts/americanuncialnormal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gloria Hallelujah';
+  src: url('/fonts/gloriahallelujah.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  touch-action: pan-y pinch-zoom;
+}
+
+body {
+  background-color: #FFFEDF;
+  position: relative;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth overflow-x-hidden;
+  }
+  body {
+    @apply text-matcha-900 overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0E7D23] text-white font-semibold rounded-full hover:bg-matcha-700 transition-all duration-300 shadow-lg shadow-matcha-500/25;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border-2 border-matcha-600 text-matcha-700 font-semibold rounded-full hover:bg-matcha-50 transition-all duration-300;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-matcha-600 to-matcha-400;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  .blob {
+    @apply rounded-[40%_60%_70%_30%/40%_50%_60%_50%];
+  }
+  .blob-2 {
+    @apply rounded-[60%_40%_30%_70%/60%_30%_70%_40%];
+  }
+}
+
+@layer utilities {
+  .schoolbell-regular {
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
