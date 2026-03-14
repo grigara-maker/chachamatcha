@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 interface SplashScreenProps {
@@ -144,38 +144,73 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
       <div className="absolute inset-0 bg-[#0E7D23]" />
 
       <motion.div 
-        className="relative z-10 flex flex-col items-center"
+        className="relative z-10 flex flex-col items-center w-full px-4"
         animate={{ opacity: isExiting ? 0 : 1, scale: isExiting ? 0.95 : 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       >
-        <div className="relative w-full sm:w-auto px-4">
+        {/* Mobil: dva řádky, každý vlastní blok = spolehlivé centrování */}
+        <div className="flex flex-col items-center w-full sm:hidden">
           <motion.h1
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-center text-[#FFFEDF]"
+            className="text-5xl tracking-tight text-[#FFFEDF] w-full text-center"
+            style={{ fontFamily: "'Gloria Hallelujah', cursive" }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {characters.slice(0, 7).map((char, i) => (
+              <motion.span
+                key={i}
+                variants={letterVariants}
+                className="inline-block cursor-pointer"
+                style={{ marginRight: char === ' ' ? '0.4em' : '0.02em' }}
+                whileHover={{ scaleX: [1, 1.2, 0.85, 1.05, 1], scaleY: [1, 0.8, 1.15, 0.95, 1] }}
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </motion.span>
+            ))}
+          </motion.h1>
+          <motion.h1
+            className="text-5xl tracking-tight text-[#FFFEDF] w-full text-center"
+            style={{ fontFamily: "'Gloria Hallelujah', cursive" }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {characters.slice(8, 14).map((char, i) => (
+              <motion.span
+                key={i + 8}
+                variants={letterVariants}
+                className="inline-block cursor-pointer"
+                style={{ marginRight: '0.02em' }}
+                whileHover={{ scaleX: [1, 1.2, 0.85, 1.05, 1], scaleY: [1, 0.8, 1.15, 0.95, 1] }}
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.h1>
+        </div>
+        {/* Desktop: jeden řádek */}
+        <div className="hidden sm:block">
+          <motion.h1
+            className="text-7xl md:text-8xl lg:text-9xl tracking-tight text-center text-[#FFFEDF]"
             style={{ fontFamily: "'Gloria Hallelujah', cursive" }}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             {characters.map((char, index) => (
-              <Fragment key={index}>
-                <motion.span
-                  variants={letterVariants}
-                  className={`inline-block cursor-pointer ${char === ' ' && index === 7 ? 'mr-0 sm:mr-[0.4em]' : ''}`}
-                  style={char === ' ' && index !== 7 ? { marginRight: '0.4em' } : (char !== ' ' ? { marginRight: '0.02em' } : undefined)}
-                  whileHover={{
-                    scaleX: [1, 1.2, 0.85, 1.05, 1],
-                    scaleY: [1, 0.8, 1.15, 0.95, 1],
-                  }}
-                  transition={{
-                    duration: 0.35,
-                    ease: "easeInOut",
-                  }}
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </motion.span>
-                {/* Na mobilu zlom po "Cha Cha " na druhý řádek "Matcha" */}
-                {index === 7 && <br className="sm:hidden" />}
-              </Fragment>
+              <motion.span
+                key={index}
+                variants={letterVariants}
+                className="inline-block cursor-pointer"
+                style={{ marginRight: char === ' ' ? '0.4em' : '0.02em' }}
+                whileHover={{ scaleX: [1, 1.2, 0.85, 1.05, 1], scaleY: [1, 0.8, 1.15, 0.95, 1] }}
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </motion.span>
             ))}
           </motion.h1>
         </div>
