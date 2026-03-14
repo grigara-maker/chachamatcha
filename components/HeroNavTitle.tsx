@@ -4,12 +4,13 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 const NAV_CENTER_TOP = 48
 const SCROLL_END = 480
-const HERO_TITLE_TOP = 380 // ~38vh na typické výšce viewportu
+const HERO_TITLE_TOP = 450 // střed hero (~50vh při 900px viewportu)
 
 export default function HeroNavTitle() {
   const { scrollY } = useScroll()
   const top = useTransform(scrollY, [0, SCROLL_END], [HERO_TITLE_TOP, NAV_CENTER_TOP])
-  const scale = useTransform(scrollY, [0, SCROLL_END], [1, 0.28])
+  // v navbaru stejná úroveň jako ostatní text (font-medium, ~1rem)
+  const scale = useTransform(scrollY, [0, SCROLL_END], [1, 0.2])
   const opacity = useTransform(scrollY, [0, 80], [1, 1])
 
   return (
@@ -24,7 +25,7 @@ export default function HeroNavTitle() {
         fontFamily: "'Gloria Hallelujah', cursive",
       }}
     >
-      <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-[#0E7D23] tracking-tight whitespace-nowrap">
+      <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-[#0E7D23] tracking-tight whitespace-nowrap inline-block">
         Cha Cha Matcha
       </span>
     </motion.a>

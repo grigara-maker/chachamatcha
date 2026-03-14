@@ -54,7 +54,7 @@ export default function Header() {
           isScrolled ? 'bg-[#FFFEDF]/80 backdrop-blur-xl shadow-lg' : 'bg-transparent'
         }`}
       >
-        <nav className="w-full px-6 sm:px-10 py-4">
+        <nav className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="hidden md:grid grid-cols-3 items-center h-20 sm:h-24 w-full">
             <div />
 
