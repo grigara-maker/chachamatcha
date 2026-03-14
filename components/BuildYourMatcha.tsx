@@ -61,7 +61,7 @@ const BuildYourMatcha = () => {
         <div className="flex justify-center items-center">
           <div className="relative perspective-[1000px]">
             {/* Static parent: overflow-hidden is the only rounding; no gap/space-y/p */}
-            <div className="relative w-[200px] h-[300px] overflow-hidden border-4 border-[#0E7D23] rounded-3xl flex flex-col justify-end bg-transparent z-10">
+            <div className="relative w-[200px] h-[300px] overflow-hidden border-4 border-[#0E7D23] rounded-[12px_12px_78px_78px] flex flex-col justify-end bg-transparent z-10">
               {/* Top slot – layout only: w-full flex-shrink-0 */}
               {matcha && (
                 <motion.div
