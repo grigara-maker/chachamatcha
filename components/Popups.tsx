@@ -19,7 +19,7 @@ export default function Popups() {
       badgeColor: 'bg-[#FFD700] text-[#0E7D23]',
       title: 'Velikonoční trhy Karlovy Vary',
       location: 'Smetanovy sady, Karlovy Vary',
-      date: '1. – 6. dubna 2026',
+      date: '2. – 5. dubna 2026',
       time: '11:00 – 17:00',
       href: 'https://kvcity.cz/akce/velikonocni-trhy-karlovy-vary-2026',
     },

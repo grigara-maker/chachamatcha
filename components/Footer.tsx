@@ -19,11 +19,11 @@ export default function Footer() {
           <div>
             <h4 id="kontakt-heading" className="text-lg font-bold mb-6 text-[#0E7D23]">Kontakt</h4>
             <a 
-              href="mailto:chachamatcha@email.cz" 
+              href="mailto:info@chachamatcha.cz" 
               className="flex items-center gap-2 text-[#0E7D23] hover:text-[#0E7D23]/70 transition-colors duration-300 mb-4"
             >
               <Mail size={18} />
-              chachamatcha@email.cz
+              info@chachamatcha.cz
             </a>
             <p className="text-[#0E7D23] mb-3">Sledujte nás na sociálních sítích</p>
             <div className="flex gap-4">
