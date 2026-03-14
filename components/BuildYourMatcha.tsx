@@ -49,7 +49,7 @@ const BuildYourMatcha = () => {
     <section className="w-full bg-[#FFFEDF] py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className={`${schoolbell.className} text-5xl md:text-6xl text-[#0E7D23] mb-4`}>
-          Namíchej si svůj drink
+          Namíchej si  drink
         </h2>
         <p className="text-[#0E7D23] text-lg md:text-xl max-w-3xl mx-auto font-medium">
           Vyber si základ, přidej mléko a zalij to naší matchou.
@@ -168,7 +168,7 @@ const BuildYourMatcha = () => {
           onClick={scrollToPopups}
           className={`${schoolbell.className} px-10 py-4 bg-[#0E7D23] text-[#FFFEDF] text-2xl rounded-full hover:scale-105 transition-transform`}
         >
-          Chci můj drink
+          Objednat drink
         </button>
       </div>
     </section>

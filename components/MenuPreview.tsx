@@ -21,7 +21,7 @@ const items = [
   },
   {
     id: 3,
-    title: 'Skořicový šnek',
+    title: 'Cinnamon roll',
     desc: 'Voňavý speciál inspirovaný čerstvě upečeným skořicovým šnekem. Hřejivá skořice, jemná sladkost a matcha v dokonale útulném spojení.',
     price: '120 Kč',
     badge: null,
@@ -48,7 +48,7 @@ const items = [
   },
   {
     id: 5,
-    title: 'Perníčkové latte',
+    title: 'Gingerbread latte',
     desc: 'Sezonní latte s kořeněnou chutí perníčku, které působí jako domácí sváteční dobrota ve skleničce. Jemné, voňavé a příjemně nostalgické.',
     price: '120 Kč',
     badge: null,

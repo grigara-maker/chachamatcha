@@ -71,7 +71,7 @@ export default function WhatIsMatcha() {
 
           <div className="mt-12 text-left">
             <h3 className={`${schoolbell.className} text-5xl md:text-6xl text-[#0E7D23] mb-8`}>
-              Jak se matcha připravuje?
+              Jak to funguje?
             </h3>
 
             <ul className={`${schoolbell.className} space-y-4 text-[#0E7D23] text-xl md:text-2xl`}>

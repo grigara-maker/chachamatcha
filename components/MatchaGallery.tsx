@@ -9,9 +9,9 @@ const MatchaGallery = () => {
   const items = [
     { id: 1, title: 'Dragon fruit matcha', desc: 'Signature matcha latte s ovocným pyré z dračího ovoce.', price: '120 Kč', badge: 'NOVINKA', videoSrc: '/videos/dragon.mp4' },
     { id: 2, title: 'Apple Pie', desc: 'Matcha latte s domácí jablečnou směsí pečenou na másle.', price: '120 Kč', badge: null, videoSrc: '/videos/apple.mp4' },
-    { id: 3, title: 'Perníčkové latte', desc: 'Matcha latte s příchutí perníčku.', price: '50 Kč', badge: null, videoSrc: '/videos/pernicek.mp4' },
+    { id: 3, title: 'Gingerbread latte', desc: 'Matcha latte s příchutí perníčku.', price: '50 Kč', badge: null, videoSrc: '/videos/pernicek.mp4' },
     { id: 4, title: 'Matcha Latte', desc: 'Naše klasika s plnotučným, sójovým nebo ovesným mlékem.', price: '90 Kč', badge: 'OBLÍBENÉ', videoSrc: '/videos/latte.mp4' },
-    { id: 5, title: 'Skořicový šnek', desc: 'Náš matcha speciál s příchutí skořicového šneka.', price: '120 Kč', badge: 'SPECIÁL', videoSrc: '/videos/snek.mp4' },
+    { id: 5, title: 'Cinnamon roll', desc: 'Náš matcha speciál s příchutí skořicového šneka.', price: '120 Kč', badge: 'SPECIÁL', videoSrc: '/videos/snek.mp4' },
   ];
 
   const handleNext = () => setCurrentIndex((prev) => (prev + 1) % items.length);

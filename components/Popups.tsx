@@ -51,7 +51,7 @@ export default function Popups() {
   return (
     <section id="popups" className="scroll-mt-32 relative w-full min-h-[80vh] bg-[#FFFEDF] pt-32 pb-24 overflow-hidden flex flex-col items-center">
       <h2 id="popups-heading" className={`${schoolbell.className} text-6xl md:text-7xl text-[#0E7D23] mb-16 text-center`}>
-        Naše akce
+        Minulé akce
       </h2>
 
       <div className="w-full max-w-6xl px-4">
