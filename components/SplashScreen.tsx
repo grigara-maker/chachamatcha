@@ -148,9 +148,9 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
         animate={{ opacity: isExiting ? 0 : 1, scale: isExiting ? 0.95 : 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       >
-        <div className="relative">
+        <div className="relative w-full sm:w-auto px-4">
           <motion.h1
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-center px-4 text-[#FFFEDF]"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-center text-[#FFFEDF]"
             style={{ fontFamily: "'Gloria Hallelujah', cursive" }}
             variants={containerVariants}
             initial="hidden"

@@ -36,7 +36,15 @@ export default function WhatIsMatcha() {
             </li>
           </ul>
 
-          <div className="relative w-full min-h-[320px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5">
+          {/* Co je to matcha: na mobilu fotka, od md výš video */}
+          <div className="relative w-full min-h-[320px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5 block md:hidden">
+            <img
+              src="/matcha.png"
+              alt="Matcha"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative w-full min-h-[320px] overflow-hidden hidden md:block">
             <video
               className="w-full h-full object-cover"
               autoPlay
@@ -58,7 +66,27 @@ export default function WhatIsMatcha() {
         </div>
 
         <div className="flex flex-col space-y-8">
-          <div className="relative w-full aspect-video min-h-[280px] rounded-3xl overflow-hidden bg-[#0E7D23]/5 border border-[#0E7D23]/20">
+          {/* Jak to funguje: na mobilu video bez okraje, od md výš fotka */}
+          <div className="relative w-full aspect-video min-h-[280px] overflow-hidden block md:hidden">
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster="/matcha.png?v=2"
+              controlsList="nodownload nofullscreen noremoteplayback"
+              disablePictureInPicture
+              onPause={(e) => {
+                void e.currentTarget.play()
+              }}
+            >
+              <source src="/whisking.MOV" type="video/quicktime" />
+              Váš prohlížeč nepodporuje přehrávání videa.
+            </video>
+          </div>
+          <div className="relative w-full aspect-video min-h-[280px] rounded-3xl overflow-hidden bg-[#0E7D23]/5 border border-[#0E7D23]/20 hidden md:block">
             <img
               src="/matcha.png"
               alt="Matcha"

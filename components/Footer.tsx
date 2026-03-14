@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer id="kontakt" className="scroll-mt-32 bg-[#FFFEDF] text-[#0E7D23] py-16">
       <div className="container-wide section-padding">
-        <div className="grid gap-12 mb-12 md:grid-cols-[minmax(0,1fr)_320px] md:items-start">
-          <div>
+        <div className="grid gap-12 mb-12 text-center md:text-left md:grid-cols-[minmax(0,1fr)_320px] md:items-start">
+          <div className="flex flex-col items-center md:items-start">
             <img 
               src="/Logo.png" 
               alt="Cha Cha Matcha" 
@@ -16,7 +16,7 @@ export default function Footer() {
             />
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 id="kontakt-heading" className="text-lg font-bold mb-6 text-[#0E7D23]">Kontakt</h4>
             <a 
               href="mailto:info@chachamatcha.cz" 
@@ -26,7 +26,7 @@ export default function Footer() {
               info@chachamatcha.cz
             </a>
             <p className="text-[#0E7D23] mb-3">Sledujte nás na sociálních sítích</p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center md:justify-start">
               <motion.a
                 href="https://www.instagram.com/matchavary/"
                 target="_blank"

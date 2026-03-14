@@ -20,13 +20,13 @@ export default function Newsletter() {
           className="text-center"
         >
           <span className="inline-block px-4 py-2 bg-[#0E7D23] text-[#FFFEDF] rounded-full text-sm font-semibold mb-6">
-            Buďte první, kdo se dozví
+            Buďte první, kdo se to dozví
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-[#0E7D23]">
             Nenechte si ujit další akci
           </h2>
           <p className="text-lg sm:text-xl text-[#0E7D23]/90 mb-10 max-w-2xl mx-auto">
-            Zadejte váš e-mail a my vám dáme vědět kde budeme příště!
+            Zadejte váš e-mail a my vám dáme vědět, kde budeme příště!
           </p>
 
           <motion.form
