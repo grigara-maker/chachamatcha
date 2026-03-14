@@ -150,7 +150,7 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
       >
         <div className="relative">
           <motion.h1
-            className="text-4xl min-[380px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight text-center px-4 text-[#FFFEDF] leading-tight"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-center px-4 text-[#FFFEDF]"
             style={{ fontFamily: "'Gloria Hallelujah', cursive" }}
             variants={containerVariants}
             initial="hidden"
@@ -179,8 +179,7 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
       </motion.div>
 
       <motion.div 
-        className="absolute bottom-20 left-0 right-0 flex justify-center z-50 safe-bottom"
-        style={{ paddingBottom: 'max(4rem, env(safe-area-inset-bottom))' }}
+        className="absolute bottom-16 left-0 right-0 flex justify-center z-50"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.4, type: 'spring', stiffness: 300, damping: 15 }}

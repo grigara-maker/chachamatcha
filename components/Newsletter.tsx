@@ -10,7 +10,7 @@ export default function Newsletter() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-[#FFFEDF] relative overflow-hidden safe-inset-x">
+    <section className="py-24 bg-[#FFFEDF] relative overflow-hidden">
 
       <div className="container-wide section-padding relative z-10" ref={ref}>
         <motion.div
@@ -19,13 +19,13 @@ export default function Newsletter() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-block px-4 py-2 bg-[#0E7D23] text-[#FFFEDF] rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+          <span className="inline-block px-4 py-2 bg-[#0E7D23] text-[#FFFEDF] rounded-full text-sm font-semibold mb-6">
             Buďte první, kdo se dozví
           </span>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[#0E7D23] leading-tight px-2">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-[#0E7D23]">
             Nenechte si ujit další akci
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-[#0E7D23]/90 mb-8 sm:mb-10 max-w-2xl mx-auto px-2">
+          <p className="text-lg sm:text-xl text-[#0E7D23]/90 mb-10 max-w-2xl mx-auto">
             Zadejte váš e-mail a my vám dáme vědět kde budeme příště!
           </p>
 
@@ -33,17 +33,17 @@ export default function Newsletter() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto px-2"
+            className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
             onSubmit={(e) => e.preventDefault()}
           >
             <input
               type="email"
               placeholder="vas@email.cz"
-              className="flex-1 min-h-[48px] px-5 sm:px-6 py-3.5 sm:py-4 bg-[#0E7D23]/10 rounded-full text-base text-[#0E7D23] placeholder:text-[#0E7D23]/60 focus:outline-none focus:ring-2 focus:ring-[#0E7D23] border border-[#0E7D23]/20"
+              className="flex-1 px-6 py-4 bg-[#0E7D23]/10 rounded-full text-[#0E7D23] placeholder:text-[#0E7D23]/60 focus:outline-none focus:ring-2 focus:ring-[#0E7D23] border border-[#0E7D23]/20"
             />
             <motion.button
               type="submit"
-              className="min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 bg-[#0E7D23] text-[#FFFEDF] rounded-full font-bold hover:scale-105 active:scale-[0.98] transition-transform flex items-center justify-center gap-2 touch-manipulation"
+              className="px-8 py-4 bg-[#0E7D23] text-[#FFFEDF] rounded-full font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

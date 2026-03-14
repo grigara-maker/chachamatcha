@@ -1,15 +1,9 @@
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Cha Cha Matcha',
   description: 'Prémiová ceremoniální matcha servírovaná na pop-up lokacích po celém městě.',
-}
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  viewportFit: 'cover',
 }
 
 export default function RootLayout({
