@@ -44,9 +44,9 @@ export default function WhatIsMatcha() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="relative w-full min-h-[320px] overflow-hidden hidden md:block">
+          <div className="relative w-full min-h-[320px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5 hidden md:block">
             <video
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-3xl"
               autoPlay
               muted
               loop
