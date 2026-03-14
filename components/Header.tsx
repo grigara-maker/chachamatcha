@@ -54,11 +54,15 @@ export default function Header() {
           isScrolled ? 'bg-[#FFFEDF]/80 backdrop-blur-xl shadow-lg' : 'bg-transparent'
         }`}
       >
-        <nav className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <nav className="w-full px-6 sm:px-10 py-4">
           <div className="hidden md:grid grid-cols-3 items-center h-20 sm:h-24 w-full">
             <div />
 
-            <div className="flex justify-center min-h-[3rem] pointer-events-none" aria-hidden="true" />
+            <div className="flex justify-center">
+              <a href="#" className="text-3xl sm:text-4xl font-bold text-[#0E7D23] leading-none tracking-tight" style={{ fontFamily: "'Gloria Hallelujah', cursive" }}>
+                CHA CHA
+              </a>
+            </div>
 
             <div
               className="flex justify-end items-center gap-1"
@@ -93,7 +97,9 @@ export default function Header() {
           </div>
 
           <div className="md:hidden flex items-center justify-between h-20">
-            <div className="min-h-[3rem] w-32 pointer-events-none" aria-hidden="true" />
+            <a href="#" className="text-3xl font-bold text-[#0E7D23] leading-none tracking-tight" style={{ fontFamily: "'Gloria Hallelujah', cursive" }}>
+              CHA CHA
+            </a>
             <motion.button className="p-2 text-[#0E7D23]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} whileTap={{ scale: 0.9 }}>
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </motion.button>
