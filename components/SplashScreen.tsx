@@ -160,8 +160,8 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
               <Fragment key={index}>
                 <motion.span
                   variants={letterVariants}
-                  className="inline-block cursor-pointer"
-                  style={{ marginRight: char === ' ' ? '0.4em' : '0.02em' }}
+                  className={`inline-block cursor-pointer ${char === ' ' && index === 7 ? 'mr-0 sm:mr-[0.4em]' : ''}`}
+                  style={char === ' ' && index !== 7 ? { marginRight: '0.4em' } : (char !== ' ' ? { marginRight: '0.02em' } : undefined)}
                   whileHover={{
                     scaleX: [1, 1.2, 0.85, 1.05, 1],
                     scaleY: [1, 0.8, 1.15, 0.95, 1],

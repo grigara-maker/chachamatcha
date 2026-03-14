@@ -66,10 +66,10 @@ export default function WhatIsMatcha() {
         </div>
 
         <div className="flex flex-col space-y-8">
-          {/* Jak to funguje: na mobilu video bez okraje, od md výš fotka */}
-          <div className="relative w-full aspect-video min-h-[280px] overflow-hidden block md:hidden">
+          {/* Jak to funguje: na mobilu video, od md výš fotka */}
+          <div className="relative w-full aspect-video min-h-[280px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5 block md:hidden">
             <video
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-3xl"
               autoPlay
               muted
               loop
