@@ -60,38 +60,38 @@ const BuildYourMatcha = () => {
         {/* Left Column: The ORGANIC Cup (Scaled Down) */}
         <div className="flex justify-center items-center">
           <div className="relative perspective-[1000px]">
-            {/* overflow-hidden clips liquid layers to cup rounded bottom; fixed DOM order = fixed visual slots */}
-            <div className="relative w-[200px] h-[300px] border-4 border-[#0E7D23] rounded-[12px_12px_78px_78px] overflow-hidden flex flex-col justify-end bg-transparent z-10">
-              {/* Top: matcha layer (fixed slot) */}
+            {/* Static parent: overflow-hidden is the only rounding; no gap/space-y/p */}
+            <div className="relative w-[200px] h-[300px] overflow-hidden border-4 border-[#0E7D23] rounded-3xl flex flex-col justify-end bg-transparent z-10">
+              {/* Top slot – layout only: w-full flex-shrink-0 */}
               {matcha && (
                 <motion.div
                   key="matcha"
                   initial={{ height: 0 }}
                   animate={{ height: '30%' }}
                   transition={{ type: 'spring', stiffness: 50, damping: 12 }}
-                  className="matcha-layer w-full flex-shrink-0 border-b border-black/10"
+                  className="w-full flex-shrink-0"
                   style={{ backgroundColor: matchas.find(m => m.id === matcha)?.color }}
                 />
               )}
-              {/* Middle: milk layer (fixed slot) */}
+              {/* Middle slot – layout only: w-full flex-shrink-0 */}
               {milk && (
                 <motion.div
                   key="milk"
                   initial={{ height: 0 }}
                   animate={{ height: '50%' }}
                   transition={{ type: 'spring', stiffness: 50, damping: 12 }}
-                  className="milk-layer w-full flex-shrink-0 border-b border-black/5"
+                  className="w-full flex-shrink-0"
                   style={{ backgroundColor: milks.find(m => m.id === milk)?.color }}
                 />
               )}
-              {/* Bottom: base/flavor layer (fixed slot) */}
+              {/* Bottom slot – layout only: w-full flex-shrink-0 */}
               {flavor && (
                 <motion.div
                   key="base"
                   initial={{ height: 0 }}
                   animate={{ height: '20%' }}
                   transition={{ type: 'spring', stiffness: 50, damping: 12 }}
-                  className="base-layer w-full flex-shrink-0"
+                  className="w-full flex-shrink-0"
                   style={{ backgroundColor: flavors.find(f => f.id === flavor)?.color }}
                 />
               )}
