@@ -36,12 +36,12 @@ export default function WhatIsMatcha() {
             </li>
           </ul>
 
-          {/* Co je to matcha: na mobilu fotka, od md výš video */}
-          <div className="relative w-full min-h-[320px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5 block md:hidden">
+          {/* Co je to matcha: na mobilu fotka (stejná velikost jako whisking), od md výš video */}
+          <div className="relative w-full aspect-video min-h-[280px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5 block md:hidden">
             <img
               src="/matcha.png"
               alt="Matcha"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover rounded-3xl"
             />
           </div>
           <div className="relative w-full min-h-[320px] overflow-hidden rounded-3xl border border-[#0E7D23]/20 bg-[#0E7D23]/5 hidden md:block">

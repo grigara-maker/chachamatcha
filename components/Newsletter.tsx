@@ -20,13 +20,13 @@ export default function Newsletter() {
           className="text-center"
         >
           <span className="inline-block px-4 py-2 bg-[#0E7D23] text-[#FFFEDF] rounded-full text-sm font-semibold mb-6">
-            Buďte první, kdo se to dozví
+            Buď první, kdo se to dozví
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-[#0E7D23]">
-            Nenechte si ujit další akci
+            Nenech si ujít další akci
           </h2>
           <p className="text-lg sm:text-xl text-[#0E7D23]/90 mb-10 max-w-2xl mx-auto">
-            Zadejte váš e-mail a my vám dáme vědět, kde budeme příště!
+            Zadej svůj e-mail a my ti dáme vědět, kde budeme příště!
           </p>
 
           <motion.form
@@ -38,7 +38,7 @@ export default function Newsletter() {
           >
             <input
               type="email"
-              placeholder="vas@email.cz"
+              placeholder="tvuj@email.cz"
               className="flex-1 px-6 py-4 bg-[#0E7D23]/10 rounded-full text-[#0E7D23] placeholder:text-[#0E7D23]/60 focus:outline-none focus:ring-2 focus:ring-[#0E7D23] border border-[#0E7D23]/20"
             />
             <motion.button
