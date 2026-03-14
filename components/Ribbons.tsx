@@ -94,6 +94,7 @@ const Ribbons = ({
     `;
 
     function resize() {
+      if (!container) return;
       const width = container.clientWidth;
       const height = container.clientHeight;
       renderer.setSize(width, height);
