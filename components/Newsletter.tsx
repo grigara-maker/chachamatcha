@@ -10,6 +10,7 @@ export default function Newsletter() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -31,7 +32,7 @@ export default function Newsletter() {
       }
 
       setEmail('')
-      window.alert('Diky! Jsi uspesne prihlasen(a) k odberu.')
+      setIsSubmitted(true)
     } catch (error) {
       console.error(error)
       window.alert('Nepodarilo se odeslat formular. Zkus to prosim znovu.')
@@ -60,32 +61,43 @@ export default function Newsletter() {
             Zadej svůj e-mail a my ti dáme vědět, kde budeme příště!
           </p>
 
-          <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
-            onSubmit={handleSubmit}
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="tvuj@email.cz"
-              className="flex-1 px-6 py-4 bg-[#0E7D23]/10 rounded-full text-[#0E7D23] placeholder:text-[#0E7D23]/60 focus:outline-none focus:ring-2 focus:ring-[#0E7D23] border border-[#0E7D23]/20"
-              required
-            />
-            <motion.button
-              type="submit"
-              disabled={isSubmitting}
-              className="px-8 py-4 bg-[#0E7D23] text-[#FFFEDF] rounded-full font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          {!isSubmitted ? (
+            <motion.form
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
+              onSubmit={handleSubmit}
             >
-              <Send size={20} />
-              Odebírat
-            </motion.button>
-          </motion.form>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="tvuj@email.cz"
+                className="flex-1 px-6 py-4 bg-[#0E7D23]/10 rounded-full text-[#0E7D23] placeholder:text-[#0E7D23]/60 focus:outline-none focus:ring-2 focus:ring-[#0E7D23] border border-[#0E7D23]/20"
+                required
+              />
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-8 py-4 bg-[#0E7D23] text-[#FFFEDF] rounded-full font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Send size={20} />
+                Odebírat
+              </motion.button>
+            </motion.form>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="max-w-xl mx-auto px-6 py-4 bg-[#0E7D23]/10 rounded-full text-[#0E7D23] border border-[#0E7D23]/20 text-base sm:text-lg font-semibold"
+            >
+              Děkujeme za přihlášení, těšíme se, až se uvidíme na další akci.
+            </motion.p>
+          )}
 
           <motion.p
             initial={{ opacity: 0 }}
