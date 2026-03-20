@@ -91,7 +91,7 @@ export default function Newsletter() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Send size={20} />
-                Odebírat
+                {isSubmitting ? 'Odesílám...' : 'Odebírat'}
               </motion.button>
             </motion.form>
           ) : (

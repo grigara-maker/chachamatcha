@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
 const ECOMAIL_API_URL = 'https://api2.ecomailapp.cz/lists'
+export const runtime = 'edge'
 
 type NewsletterBody = {
   email?: string
@@ -35,7 +36,6 @@ export async function POST(request: Request) {
         subscriber_data: {
           email,
         },
-        trigger_autoresponders: true,
         update_existing: true,
       }),
     })
