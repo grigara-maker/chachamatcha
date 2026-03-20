@@ -8,8 +8,8 @@ type NewsletterBody = {
 
 export async function POST(request: Request) {
   try {
-    const apiKey = process.env.ECOMAIL_API_KEY
-    const listId = process.env.ECOMAIL_LIST_ID
+    const apiKey = process.env.ECOMAIL_API_KEY?.trim()
+    const listId = process.env.ECOMAIL_LIST_ID?.trim()
 
     if (!apiKey || !listId) {
       return NextResponse.json(
@@ -43,7 +43,11 @@ export async function POST(request: Request) {
     if (!ecomailResponse.ok) {
       const errorText = await ecomailResponse.text()
       return NextResponse.json(
-        { error: 'Ecomail request failed', details: errorText },
+        {
+          error: 'Ecomail request failed',
+          details: errorText,
+          upstreamStatus: ecomailResponse.status,
+        },
         { status: 502 }
       )
     }

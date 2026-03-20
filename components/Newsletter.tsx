@@ -28,14 +28,20 @@ export default function Newsletter() {
       })
 
       if (!response.ok) {
-        throw new Error('Newsletter subscription failed')
+        const data = await response.json().catch(() => null)
+        const details = data?.details || data?.error || 'Newsletter subscription failed'
+        throw new Error(details)
       }
 
       setEmail('')
       setIsSubmitted(true)
     } catch (error) {
       console.error(error)
-      window.alert('Nepodarilo se odeslat formular. Zkus to prosim znovu.')
+      const message =
+        error instanceof Error && error.message
+          ? `Nepodarilo se odeslat formular: ${error.message}`
+          : 'Nepodarilo se odeslat formular. Zkus to prosim znovu.'
+      window.alert(message)
     } finally {
       setIsSubmitting(false)
     }
