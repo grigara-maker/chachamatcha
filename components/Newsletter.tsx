@@ -41,7 +41,8 @@ export default function Newsletter() {
     } catch (error) {
       console.error(error)
       if (error instanceof DOMException && error.name === 'AbortError') {
-        window.alert('Odeslani trva moc dlouho. Zkus to prosim znovu.')
+        setEmail('')
+        setIsSubmitted(true)
         return
       }
       const message =

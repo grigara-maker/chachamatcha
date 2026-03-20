@@ -42,6 +42,20 @@ export async function POST(request: Request) {
 
     if (!ecomailResponse.ok) {
       const errorText = await ecomailResponse.text()
+
+      // Ecomail muze vratit chybu i kdyz je kontakt uz v seznamu.
+      // V tomhle pripade to pro UI bereme jako uspesne prihlaseni.
+      const normalizedError = errorText.toLowerCase()
+      const alreadySubscribed =
+        normalizedError.includes('already') ||
+        normalizedError.includes('exists') ||
+        normalizedError.includes('existuje') ||
+        normalizedError.includes('subscriber')
+
+      if (alreadySubscribed) {
+        return NextResponse.json({ success: true, alreadySubscribed: true })
+      }
+
       return NextResponse.json(
         {
           error: 'Ecomail request failed',
