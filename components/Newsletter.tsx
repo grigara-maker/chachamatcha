@@ -2,12 +2,43 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Send } from 'lucide-react'
 
 export default function Newsletter() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!email || isSubmitting) return
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Newsletter subscription failed')
+      }
+
+      setEmail('')
+      window.alert('Diky! Jsi uspesne prihlasen(a) k odberu.')
+    } catch (error) {
+      console.error(error)
+      window.alert('Nepodarilo se odeslat formular. Zkus to prosim znovu.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <section className="py-24 bg-[#FFFEDF] relative overflow-hidden">
@@ -34,15 +65,19 @@ export default function Newsletter() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="tvuj@email.cz"
               className="flex-1 px-6 py-4 bg-[#0E7D23]/10 rounded-full text-[#0E7D23] placeholder:text-[#0E7D23]/60 focus:outline-none focus:ring-2 focus:ring-[#0E7D23] border border-[#0E7D23]/20"
+              required
             />
             <motion.button
               type="submit"
+              disabled={isSubmitting}
               className="px-8 py-4 bg-[#0E7D23] text-[#FFFEDF] rounded-full font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
