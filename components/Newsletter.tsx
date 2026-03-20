@@ -17,6 +17,8 @@ export default function Newsletter() {
     if (!email || isSubmitting) return
 
     setIsSubmitting(true)
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 10000)
 
     try {
       const response = await fetch('/api/newsletter', {
@@ -25,6 +27,7 @@ export default function Newsletter() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email }),
+        signal: controller.signal,
       })
 
       if (!response.ok) {
@@ -37,12 +40,17 @@ export default function Newsletter() {
       setIsSubmitted(true)
     } catch (error) {
       console.error(error)
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        window.alert('Odeslani trva moc dlouho. Zkus to prosim znovu.')
+        return
+      }
       const message =
         error instanceof Error && error.message
           ? `Nepodarilo se odeslat formular: ${error.message}`
           : 'Nepodarilo se odeslat formular. Zkus to prosim znovu.'
       window.alert(message)
     } finally {
+      clearTimeout(timeoutId)
       setIsSubmitting(false)
     }
   }
